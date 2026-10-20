@@ -1,0 +1,183 @@
+<!doctype html>
+<html lang="az">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Toy Dəvətnaməsi</title>
+<meta name="description" content="Toy dəvətnaməsi">
+<meta property="og:title" content="Toy Dəvətnaməsi">
+<meta property="og:description" content="Sizi toyumuza dəvət edirik">
+<meta property="og:type" content="website">
+<meta name="theme-color" content="#13352B">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500;1,600&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body class="locked">
+
+<!-- Zərf açılışı -->
+<div class="intro" id="intro">
+  <canvas class="sparkles" id="sparkIntro"></canvas>
+  <div class="lang-switch" role="group" aria-label="Language">
+    <button data-lang="az">AZ</button><button data-lang="en">EN</button><button data-lang="ru">RU</button>
+  </div>
+  <button class="envelope" id="envelope" aria-label="Open">
+    <div class="env-back"></div>
+    <div class="env-card"><span class="small" data-i18n="label"></span><span class="nm" id="envNames"></span></div>
+    <div class="env-front"></div>
+    <div class="env-flap"></div>
+    <div class="seal" id="seal"></div>
+    <div class="env-sprig"><svg viewBox="0 0 200 70" fill="currentColor" aria-hidden="true"><path d="M6 58 C 50 52, 100 40, 194 10" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/><g><path transform="translate(30 54) rotate(-120)" d="M0 0 C6 -5 16 -5 22 0 C16 5 6 5 0 0Z"/><path transform="translate(44 51) rotate(60)" d="M0 0 C6 -5 16 -5 22 0 C16 5 6 5 0 0Z"/><path transform="translate(64 46) rotate(-125)" d="M0 0 C6 -5 16 -5 22 0 C16 5 6 5 0 0Z"/><path transform="translate(80 43) rotate(55)" d="M0 0 C6 -5 17 -5 24 0 C17 5 6 5 0 0Z"/><path transform="translate(100 37) rotate(-130)" d="M0 0 C6 -5 17 -5 24 0 C17 5 6 5 0 0Z"/><path transform="translate(118 32) rotate(50)" d="M0 0 C6 -5 17 -5 24 0 C17 5 6 5 0 0Z"/><path transform="translate(138 25) rotate(-135)" d="M0 0 C6 -5 16 -5 22 0 C16 5 6 5 0 0Z"/><path transform="translate(154 21) rotate(45)" d="M0 0 C6 -5 16 -5 22 0 C16 5 6 5 0 0Z"/><path transform="translate(172 15) rotate(-140)" d="M0 0 C5 -4 13 -4 18 0 C13 4 5 4 0 0Z"/><path transform="translate(194 10) rotate(-20)" d="M0 0 C5 -4 13 -4 18 0 C13 4 5 4 0 0Z"/></g></svg></div>
+  </button>
+  <p class="tap" data-i18n="tap"></p>
+</div>
+
+<div class="topbar">
+  <div class="lang-switch" role="group" aria-label="Language">
+    <button data-lang="az">AZ</button><button data-lang="en">EN</button><button data-lang="ru">RU</button>
+  </div>
+  <button class="music-btn" id="musicBtn" hidden aria-label="Music">
+    <svg viewBox="0 0 24 24" class="bars" fill="currentColor"><rect x="4" y="6" width="3" height="12" rx="1"/><rect x="10.5" y="3" width="3" height="18" rx="1"/><rect x="17" y="8" width="3" height="10" rx="1"/></svg>
+  </button>
+</div>
+
+<main id="main">
+  <header class="hero">
+    <canvas class="sparkles" id="sparkHero"></canvas>
+    <div class="wrap">
+      <div class="hero-sprig"><svg viewBox="0 0 200 70" fill="currentColor" aria-hidden="true"><path d="M6 58 C 50 52, 100 40, 194 10" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/><g><path transform="translate(30 54) rotate(-120)" d="M0 0 C6 -5 16 -5 22 0 C16 5 6 5 0 0Z"/><path transform="translate(44 51) rotate(60)" d="M0 0 C6 -5 16 -5 22 0 C16 5 6 5 0 0Z"/><path transform="translate(64 46) rotate(-125)" d="M0 0 C6 -5 16 -5 22 0 C16 5 6 5 0 0Z"/><path transform="translate(80 43) rotate(55)" d="M0 0 C6 -5 17 -5 24 0 C17 5 6 5 0 0Z"/><path transform="translate(100 37) rotate(-130)" d="M0 0 C6 -5 17 -5 24 0 C17 5 6 5 0 0Z"/><path transform="translate(118 32) rotate(50)" d="M0 0 C6 -5 17 -5 24 0 C17 5 6 5 0 0Z"/><path transform="translate(138 25) rotate(-135)" d="M0 0 C6 -5 16 -5 22 0 C16 5 6 5 0 0Z"/><path transform="translate(154 21) rotate(45)" d="M0 0 C6 -5 16 -5 22 0 C16 5 6 5 0 0Z"/><path transform="translate(172 15) rotate(-140)" d="M0 0 C5 -4 13 -4 18 0 C13 4 5 4 0 0Z"/><path transform="translate(194 10) rotate(-20)" d="M0 0 C5 -4 13 -4 18 0 C13 4 5 4 0 0Z"/></g></svg></div>
+      <p class="eyebrow" data-i18n="label"></p>
+      <h1 class="names" id="heroNames"></h1>
+      <div class="orn"></div>
+      <p class="hero-date" id="heroDate"></p>
+      <p class="hero-sub" id="heroSub"></p>
+      <p class="guest-line" id="guestLine" hidden></p>
+      <p class="invite-text" id="inviteText"></p>
+      <a class="scroll-cue" href="#countdown" aria-label="Scroll">&#8964;</a>
+    </div>
+  </header>
+
+  <section class="block" id="countdown">
+    <div class="wrap reveal">
+      <div class="sec-head"><h2 class="sec-title" data-i18n="countdown"></h2><div class="orn"></div></div>
+      <div class="countdown" id="cd"></div>
+    </div>
+  </section>
+
+  <section class="block" id="story">
+    <div class="wrap reveal">
+      <div class="sec-head"><h2 class="sec-title" data-i18n="story"></h2><div class="orn"></div></div>
+      <div class="story" id="storyList"></div>
+    </div>
+  </section>
+
+  <section class="block" id="venue">
+    <div class="wrap reveal">
+      <div class="sec-head"><h2 class="sec-title" data-i18n="venue"></h2><div class="orn"></div></div>
+      <div class="card">
+        <iframe class="map" id="map" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="Map"></iframe>
+        <div class="venue-info">
+          <p class="venue-name" id="venueName"></p>
+          <p class="muted" id="venueHall"></p>
+          <p class="muted" id="venueAddr"></p>
+          <div class="btn-row">
+            <a class="btn" id="gmaps" target="_blank" rel="noopener"><span data-i18n="maps"></span></a>
+            <a class="btn ghost" id="waze" target="_blank" rel="noopener"><span data-i18n="waze"></span></a>
+          </div>
+          <div class="btn-row"><button class="btn ghost" id="icsBtn"><span data-i18n="calendar"></span></button></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="block" id="program">
+    <div class="wrap reveal">
+      <div class="sec-head"><h2 class="sec-title" data-i18n="program"></h2><div class="orn"></div></div>
+      <ul class="program" id="programList"></ul>
+    </div>
+  </section>
+
+  <section class="block" id="dress">
+    <div class="wrap reveal dress">
+      <div class="sec-head"><h2 class="sec-title" data-i18n="dress"></h2><div class="orn"></div></div>
+      <p class="dress-title" id="dressTitle"></p>
+      <p class="muted" id="dressNote"></p>
+      <div class="swatches" id="swatches"></div>
+    </div>
+  </section>
+
+  <section class="block" id="seating">
+    <div class="wrap reveal">
+      <div class="sec-head"><h2 class="sec-title" data-i18n="seating"></h2><div class="orn"></div></div>
+      <form class="seat-form" id="seatForm">
+        <input class="input" id="seatInput" data-i18n-ph="seat_ph" autocomplete="name">
+        <button class="btn" data-i18n="seat_btn"></button>
+      </form>
+      <p class="seat-result" id="seatResult" aria-live="polite"></p>
+    </div>
+  </section>
+
+  <section class="block" id="rsvp">
+    <div class="wrap reveal">
+      <div class="sec-head"><h2 class="sec-title" data-i18n="rsvp"></h2><div class="orn"></div>
+        <p class="muted" id="rsvpBy"></p></div>
+      <form id="rsvpForm" novalidate>
+        <div class="field"><label for="rName" data-i18n="name"></label><input class="input" id="rName" maxlength="100" autocomplete="name"></div>
+        <div class="field choices three" role="radiogroup">
+          <label class="choice"><input type="radio" name="att" value="yes" checked><span data-i18n="yes"></span></label>
+          <label class="choice"><input type="radio" name="att" value="no"><span data-i18n="no"></span></label>
+          <label class="choice"><input type="radio" name="att" value="maybe"><span data-i18n="maybe"></span></label>
+        </div>
+        <div class="field" id="countField"><span class="lbl" data-i18n="count"></span>
+          <div class="stepper"><button type="button" id="minus" aria-label="-">−</button><output id="cnt">1</output><button type="button" id="plus" aria-label="+">+</button></div>
+        </div>
+        <div class="field"><label for="rNote" data-i18n="note"></label><textarea class="input" id="rNote" maxlength="500"></textarea></div>
+        <button class="btn block" id="rSend" data-i18n="send"></button>
+        <div class="notice" id="rMsg" role="status"></div>
+      </form>
+    </div>
+  </section>
+
+  <section class="block" id="guestbook">
+    <div class="wrap reveal">
+      <div class="sec-head"><h2 class="sec-title" data-i18n="gb"></h2><div class="orn"></div></div>
+      <form id="gbForm" novalidate>
+        <div class="field"><input class="input" id="gName" maxlength="80" data-i18n-ph="name" autocomplete="name"></div>
+        <div class="field"><textarea class="input" id="gText" maxlength="600" data-i18n-ph="gb_ph"></textarea></div>
+        <button class="btn block" id="gSend" data-i18n="gb_send"></button>
+        <div class="notice" id="gMsg" role="status"></div>
+      </form>
+      <div class="wishes" id="wishes"></div>
+    </div>
+  </section>
+
+  <section class="block" id="photos">
+    <div class="wrap reveal photo-cta">
+      <div class="sec-head"><h2 class="sec-title" data-i18n="photos"></h2><div class="orn"></div></div>
+      <svg class="qr-art" viewBox="0 0 48 48" fill="currentColor" aria-hidden="true">
+        <path d="M4 4h14v14H4zM8 8v6h6V8zM30 4h14v14H30zm4 4v6h6V8zM4 30h14v14H4zm4 4v6h6v-6z"/>
+        <path d="M22 4h4v4h-4zM22 12h4v6h-4zM22 22h4v4h-4zM30 22h4v4h-4zM38 22h6v4h-6zM4 22h4v4H4zM12 22h6v4h-6zM30 30h4v4h-4zM38 30h6v6h-6zM30 38h4v6h-4zM22 30h4v6h-4zM22 40h4v4h-4zM36 40h8v4h-8z" opacity=".75"/>
+      </svg>
+      <p class="muted" data-i18n="photos_text"></p>
+      <div class="btn-row"><a class="btn gold" href="foto.html" id="albumLink"><span data-i18n="photos_btn"></span></a></div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="wrap">
+      <div class="orn"></div>
+      <p class="names" id="footNames"></p>
+      <p id="footDate"></p>
+      <p style="margin-top:14px" data-i18n="footer"></p>
+    </div>
+  </footer>
+</main>
+
+<audio id="audio" loop preload="none"></audio>
+
+<script src="config.js"></script>
+<script src="assets/core.js"></script>
+<script src="assets/invite.js"></script>
+</body>
+</html>
