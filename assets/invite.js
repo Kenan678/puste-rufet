@@ -27,15 +27,18 @@
   /* ---------- Render (dilə görə) ---------- */
   function render() {
     const couple = `${W.bride} ${W.theme === "white-gold" ? T.t("and") : "&"} ${W.groom}`;
-    document.title = `${couple} — ${T.t("label").toLowerCase().replace(/^./, c => c.toUpperCase())}`;
+    document.title = `${couple} — ${T.t("title")}`;
     if ($("envNames")) {   // zərf açıldıqdan sonra DOM-dan silinir
       $("envNames").textContent = couple;
       $("seal").textContent = W.monogram || (W.bride[0] + "&" + W.groom[0]);
     }
     const amp = W.theme === "white-gold" ? T.esc(T.t("and")) : "&amp;";
-    $("heroNames").innerHTML = `${T.esc(W.bride)}<span class="amp">${amp}</span>${T.esc(W.groom)}`;
-    $("heroDate").textContent = T.dotDate(W.date);
-    $("heroSub").textContent = `${T.weekday(W.date)} · ${T.time(W.date)}`;
+    $("heroNames").innerHTML = `<span class="nm1">${T.esc(W.bride)}</span><span class="amp">${amp}</span><span class="nm2">${T.esc(W.groom)}</span>`;
+    const dp = T.dotDate(W.date).split(" · ");
+    $("heroDate").textContent = dp.join(".");
+    $("heroDay").textContent = T.weekday(W.date).toLocaleUpperCase(T.lang === "az" ? "az" : T.lang);
+    $("heroTime").textContent = T.time(W.date);
+    $("heroVenue").textContent = W.venue ? [W.venue.name, T.pick(W.venue.hall)].filter(Boolean).join(", ").toLocaleUpperCase(T.lang === "az" ? "az" : T.lang) : "";
     if (guest) { $("guestLine").hidden = false; $("guestLine").textContent = T.t("for_guest", { name: guest }); }
     $("inviteText").textContent = T.pick(W.inviteText) || T.t("invite");
     $("footNames").textContent = couple;
@@ -58,7 +61,7 @@
     }
 
     if (W.program) $("programList").innerHTML = W.program.map(p =>
-      `<li><span class="tm">${T.esc(p.time)}</span><span class="ti">${T.esc(T.pick(p.title))}</span></li>`).join("");
+      `<li><span class="tm">${T.esc(p.time)}</span>${p.icon ? `<span class="ic" aria-hidden="true">${T.esc(p.icon)}</span>` : ""}<span class="ti">${T.esc(T.pick(p.title))}</span></li>`).join("");
 
     if (W.dressCode) {
       $("dressTitle").textContent = T.pick(W.dressCode.title);
@@ -210,6 +213,24 @@
     } catch (err) { console.error(err); note($("gMsg"), "err", T.t("err")); }
     finally { btn.disabled = false; }
   });
+
+  /* ---------- 3D qızılı üzüklər ---------- */
+  (function rings() {
+    const box = $("rings"); if (!box) return;
+    const ring = (id, stops, gem) => {
+      let layers = "";
+      for (let z = -4; z <= 4; z++) {
+        const shade = 1 - Math.abs(z) * 0.07;
+        layers += `<svg viewBox="0 0 120 120" style="transform:translateZ(${z * 1.1}px);filter:brightness(${shade})"><circle cx="60" cy="60" r="46" fill="none" stroke="url(#${id})" stroke-width="10"/>${z === 4 ? '<circle cx="60" cy="60" r="46" fill="none" stroke="rgba(255,255,255,.55)" stroke-width="1.6" stroke-dasharray="40 250" stroke-dashoffset="-20" stroke-linecap="round"/>' : ""}</svg>`;
+      }
+      const g = gem ? `<div class="gem"></div>` : "";
+      return `<div class="ring ${id}">${layers}${g}</div>`;
+    };
+    box.innerHTML = `<svg width="0" height="0" style="position:absolute"><defs>
+      <linearGradient id="rg1" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#F7DE9A"/><stop offset=".3" stop-color="#D2A042"/><stop offset=".55" stop-color="#8E621A"/><stop offset=".8" stop-color="#E2B95E"/><stop offset="1" stop-color="#FFF0C2"/></linearGradient>
+      <linearGradient id="rg2" x1="1" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#FFF4D2"/><stop offset=".35" stop-color="#E4C47A"/><stop offset=".6" stop-color="#B38A3C"/><stop offset=".85" stop-color="#F2D990"/><stop offset="1" stop-color="#FFF8E4"/></linearGradient>
+    </defs></svg>` + ring("rg1", 0, false) + ring("rg2", 0, true);
+  })();
 
   /* ---------- Qızılı parıltılar ---------- */
   function sparkles(canvas, count, opts) {

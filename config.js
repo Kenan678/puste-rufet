@@ -45,13 +45,13 @@ window.WEDDING = {
 
   /* ---- Toy proqramı ---- */
   program: [
-    { time: "18:00", title: { az: "Qonaqların möhtəşəm qarşılanması", en: "Grand welcome of guests", ru: "Торжественная встреча гостей" } },
-    { time: "19:00", title: { az: "Bəy və gəlinin girişi və rəqsi", en: "Entrance and first dance of the couple", ru: "Выход и танец жениха и невесты" } },
-    { time: "20:30", title: { az: "Şah plov süfrəsi", en: "Shah pilaf feast", ru: "Шах-плов" } },
-    { time: "20:45", title: { az: "Tort kəsimi", en: "Cake cutting", ru: "Разрезание торта" } },
-    { time: "21:00", title: { az: "Band qrupu", en: "Live band", ru: "Живая музыка" } },
-    { time: "21:30", title: { az: "Diskoteka", en: "Dance party", ru: "Дискотека" } },
-    { time: "22:30", title: { az: "Yekun proqram", en: "Closing programme", ru: "Завершение вечера" } }
+    { time: "18:00", icon: "🥂", title: { az: "Qonaqların möhtəşəm qarşılanması", en: "Grand welcome of guests", ru: "Торжественная встреча гостей" } },
+    { time: "19:00", icon: "💍", title: { az: "Bəy və gəlinin girişi və rəqsi", en: "Entrance and first dance of the couple", ru: "Выход и танец жениха и невесты" } },
+    { time: "20:30", icon: "🍽️", title: { az: "Şah plov süfrəsi", en: "Shah pilaf feast", ru: "Шах-плов" } },
+    { time: "20:45", icon: "🎂", title: { az: "Tort kəsimi", en: "Cake cutting", ru: "Разрезание торта" } },
+    { time: "21:00", icon: "🎷", title: { az: "Band qrupu", en: "Live band", ru: "Живая музыка" } },
+    { time: "21:30", icon: "💃", title: { az: "Diskoteka", en: "Dance party", ru: "Дискотека" } },
+    { time: "22:30", icon: "✨", title: { az: "Yekun proqram", en: "Closing programme", ru: "Завершение вечера" } }
   ],
 
   /* ---- Geyim tərzi ---- */
@@ -98,8 +98,8 @@ window.WEDDING = {
   /* ---- Supabase (README-də necə alınacağı yazılıb) ----
      Boş qalsa, sayt NÜMUNƏ rejimində işləyir: hər şey görünür, amma heç nə saxlanmır. */
   supabase: {
-    url: "",        // məs: "https://abcdxyz.supabase.co"
-    anonKey: ""     // "anon public" açarı
+    url: "https://bjxqcubapbyelmchyexo.supabase.co",
+    anonKey: "sb_publishable_gk6vcScnwNZ4cRRdgishig_Lheqqlzm"
   },
 
   /* ---- Şəkil yükləmə ---- */

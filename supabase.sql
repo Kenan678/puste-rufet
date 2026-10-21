@@ -2,14 +2,13 @@
 -- TOY SAYTI — Supabase quraşdırması
 -- Supabase → SQL Editor → New query → bu faylın hamısını yapışdırın → RUN
 --
--- ƏVVƏLCƏ: aşağıdakı 'ADMIN@EMAIL.COM' sözünü (1 yerdə, is_admin funksiyasında)
--- admin kimi giriş edəcəyiniz e-poçtla əvəz edin.
+-- Admin e-poçtu: kananmammadov678@gmail.com (is_admin funksiyasında)
 -- =========================================================
 
 -- Admin yoxlaması (yalnız bu e-poçt bütün məlumatı görə və silə bilər)
 create or replace function public.is_admin() returns boolean
 language sql stable as $$
-  select coalesce(auth.jwt() ->> 'email', '') = lower('ADMIN@EMAIL.COM')
+  select coalesce(auth.jwt() ->> 'email', '') = lower('kananmammadov678@gmail.com')
 $$;
 
 -- ---------- İştirak təsdiqləri ----------
@@ -50,6 +49,16 @@ alter table public.photos enable row level security;
 create policy "photos: hər kəs əlavə edir" on public.photos for insert to anon, authenticated with check (true);
 create policy "photos: hər kəs görür"      on public.photos for select to anon, authenticated using (true);
 create policy "photos: admin silir"        on public.photos for delete to authenticated using (public.is_admin());
+
+-- ---------- Giriş hüquqları (layihədə "Automatically expose new tables" söndürülübsə də işləsin) ----------
+grant usage on schema public to anon, authenticated;
+grant insert on public.rsvps to anon, authenticated;
+grant select, delete on public.rsvps to authenticated;
+grant insert, select on public.guestbook to anon, authenticated;
+grant delete on public.guestbook to authenticated;
+grant insert, select on public.photos to anon, authenticated;
+grant delete on public.photos to authenticated;
+grant execute on function public.is_admin() to anon, authenticated;
 
 -- ---------- Şəkil faylları (Storage) ----------
 -- Açıq bucket, hər fayl max 10 MB, yalnız şəkil
