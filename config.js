@@ -29,8 +29,8 @@ window.WEDDING = {
     address: "Bakı, Babək prospekti 64/3",
     mapQuery: "Arzu Hall şadlıq sarayı, Babək prospekti 64/3, Bakı",
     wazeUrl: "https://www.waze.com/az/live-map/directions/arzu-hall-sadliq-sarayi-babek-prospekti-baki?to=place.w.32702868.327225287.10371969",
-    lat: null,   // xəritədə yer səhv çıxsa, Google Maps-dan dəqiq koordinatları bura yazın
-    lng: null
+    lat: 40.392911,   // Waze-dəki Arzu Hall nişanından
+    lng: 49.925757
   },
 
   /* ---- Bizim hekayəmiz (istəmirsinizsə: story: []) ---- */

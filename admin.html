@@ -246,9 +246,17 @@
   function qrMatrix(text) { const q = qrcode(0, "M"); q.addData(text); q.make(); return q; }
   function drawQr(ctx, text, x, y, size, color) {
     const q = qrMatrix(text), n = q.getModuleCount(), cell = size / n;
+    const finder = (r, k) => (r < 7 && k < 7) || (r < 7 && k >= n - 7) || (r >= n - 7 && k < 7);
+    const rr = (px, py, w, h, rad) => { ctx.beginPath(); ctx.roundRect ? ctx.roundRect(px, py, w, h, rad) : ctx.rect(px, py, w, h); ctx.fill(); };
     ctx.fillStyle = color;
-    for (let r = 0; r < n; r++) for (let c = 0; c < n; c++) if (q.isDark(r, c))
-      ctx.fillRect(Math.floor(x + c * cell), Math.floor(y + r * cell), Math.ceil(cell), Math.ceil(cell));
+    for (let r = 0; r < n; r++) for (let k = 0; k < n; k++) if (q.isDark(r, k) && !finder(r, k))
+      rr(x + k * cell + cell * .04, y + r * cell + cell * .04, cell * .92, cell * .92, cell * .32);
+    for (const [r, k] of [[0, 0], [0, n - 7], [n - 7, 0]]) {               // yumru "göz"lər
+      const ex = x + k * cell, ey = y + r * cell;
+      ctx.lineWidth = cell; ctx.strokeStyle = color;
+      ctx.beginPath(); ctx.roundRect ? ctx.roundRect(ex + cell / 2, ey + cell / 2, cell * 6, cell * 6, cell * 1.6) : ctx.rect(ex + cell / 2, ey + cell / 2, cell * 6, cell * 6); ctx.stroke();
+      rr(ex + cell * 2, ey + cell * 2, cell * 3, cell * 3, cell * .9);
+    }
   }
   const fotoLink = () => T.baseUrl() + "foto.html";
   const invLink = () => T.baseUrl();
@@ -266,7 +274,7 @@
     x.textAlign = "center"; x.fillStyle = C.gold;
     x.font = '700 34px "Manrope", sans-serif'; spaced(x, "TOY ŞƏKİLLƏRİ", Wd / 2, 220, 10);
     x.fillStyle = C.main; x.font = 'italic 500 128px "Cormorant Garamond", serif';
-    x.fillText(`${W.bride} & ${W.groom}`, Wd / 2, 380, Wd - 200);
+    x.fillText(`${W.bride} ${W.theme === "white-gold" ? "və" : "&"} ${W.groom}`, Wd / 2, 380, Wd - 200);
     x.fillStyle = C.soft; x.font = '500 40px "Manrope", sans-serif';
     x.fillText(T.longDate(W.date), Wd / 2, 450);
     const qs = 720, qx = (Wd - qs) / 2, qy = 540;

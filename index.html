@@ -43,13 +43,15 @@
     <button data-lang="az">AZ</button><button data-lang="en">EN</button><button data-lang="ru">RU</button>
   </div>
   <button class="music-btn" id="musicBtn" hidden aria-label="Music">
-    <svg viewBox="0 0 24 24" class="bars" fill="currentColor"><rect x="4" y="6" width="3" height="12" rx="1"/><rect x="10.5" y="3" width="3" height="18" rx="1"/><rect x="17" y="8" width="3" height="10" rx="1"/></svg>
+    <span class="mb-ic"><svg viewBox="0 0 24 24" class="note" fill="currentColor"><path d="M9 17.5a2.5 2.5 0 1 1-2-2.45V5.2a1 1 0 0 1 .78-.98l9-2A1 1 0 0 1 18 3.2v11.3a2.5 2.5 0 1 1-2-2.45V6.45l-7 1.56z"/></svg><svg viewBox="0 0 24 24" class="bars" fill="currentColor"><rect x="4" y="6" width="3" height="12" rx="1"/><rect x="10.5" y="3" width="3" height="18" rx="1"/><rect x="17" y="8" width="3" height="10" rx="1"/></svg></span>
+    <span class="mb-lbl" id="musicLbl"></span>
   </button>
 </div>
 
 <main id="main">
   <header class="hero">
     <canvas class="sparkles" id="sparkHero"></canvas>
+    <div class="garland left" aria-hidden="true"></div><div class="garland right" aria-hidden="true"></div>
     <div class="wrap">
       <div class="hero-sprig"><svg viewBox="0 0 200 70" fill="currentColor" aria-hidden="true"><path d="M6 58 C 50 52, 100 40, 194 10" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/><g><path transform="translate(30 54) rotate(-120)" d="M0 0 C6 -5 16 -5 22 0 C16 5 6 5 0 0Z"/><path transform="translate(44 51) rotate(60)" d="M0 0 C6 -5 16 -5 22 0 C16 5 6 5 0 0Z"/><path transform="translate(64 46) rotate(-125)" d="M0 0 C6 -5 16 -5 22 0 C16 5 6 5 0 0Z"/><path transform="translate(80 43) rotate(55)" d="M0 0 C6 -5 17 -5 24 0 C17 5 6 5 0 0Z"/><path transform="translate(100 37) rotate(-130)" d="M0 0 C6 -5 17 -5 24 0 C17 5 6 5 0 0Z"/><path transform="translate(118 32) rotate(50)" d="M0 0 C6 -5 17 -5 24 0 C17 5 6 5 0 0Z"/><path transform="translate(138 25) rotate(-135)" d="M0 0 C6 -5 16 -5 22 0 C16 5 6 5 0 0Z"/><path transform="translate(154 21) rotate(45)" d="M0 0 C6 -5 16 -5 22 0 C16 5 6 5 0 0Z"/><path transform="translate(172 15) rotate(-140)" d="M0 0 C5 -4 13 -4 18 0 C13 4 5 4 0 0Z"/><path transform="translate(194 10) rotate(-20)" d="M0 0 C5 -4 13 -4 18 0 C13 4 5 4 0 0Z"/></g></svg></div>
       <p class="eyebrow" data-i18n="kicker"></p>
@@ -132,10 +134,11 @@
   <section class="block" id="photos">
     <div class="wrap reveal photo-cta">
       <div class="sec-head"><p class="eyebrow" data-i18n="eb_photos"></p><h2 class="sec-title" data-i18n="photos"></h2><div class="orn"></div></div>
-      <svg class="qr-art" viewBox="0 0 48 48" fill="currentColor" aria-hidden="true">
-        <path d="M4 4h14v14H4zM8 8v6h6V8zM30 4h14v14H30zm4 4v6h6V8zM4 30h14v14H4zm4 4v6h6v-6z"/>
-        <path d="M22 4h4v4h-4zM22 12h4v6h-4zM22 22h4v4h-4zM30 22h4v4h-4zM38 22h6v4h-6zM4 22h4v4H4zM12 22h6v4h-6zM30 30h4v4h-4zM38 30h6v6h-6zM30 38h4v6h-4zM22 30h4v6h-4zM22 40h4v4h-4zM36 40h8v4h-8z" opacity=".75"/>
-      </svg>
+      <div class="qr-card">
+        <span class="qc-corner tl"></span><span class="qc-corner tr"></span><span class="qc-corner bl"></span><span class="qc-corner br"></span>
+        <div class="qr-svg" id="qrPhotos"></div>
+        <p class="qc-cap" data-i18n="scan_cap"></p>
+      </div>
       <p class="muted" data-i18n="photos_text"></p>
       <div class="btn-row"><a class="btn gold" href="foto.html" id="albumLink"><span data-i18n="photos_btn"></span></a></div>
     </div>
@@ -189,6 +192,13 @@
 
 <script src="config.js"></script>
 <script src="assets/core.js"></script>
+<script src="assets/vendor/qrcode.js"></script>
 <script src="assets/invite.js"></script>
+<script type="importmap">{ "imports": { "three": "./assets/vendor/three.module.min.js" } }</script>
+<script type="module">
+  import { mountRings } from "./assets/rings3d.js";
+  const box = document.getElementById("rings");
+  try { if (box && mountRings(box)) box.classList.add("webgl"); } catch (e) { console.warn("3D üzüklər alınmadı:", e); }
+</script>
 </body>
 </html>

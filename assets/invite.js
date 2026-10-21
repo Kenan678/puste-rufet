@@ -61,7 +61,7 @@
     }
 
     if (W.program) $("programList").innerHTML = W.program.map(p =>
-      `<li><span class="tm">${T.esc(p.time)}</span>${p.icon ? `<span class="ic" aria-hidden="true">${T.esc(p.icon)}</span>` : ""}<span class="ti">${T.esc(T.pick(p.title))}</span></li>`).join("");
+      `<li><span class="ic" aria-hidden="true">${T.esc(p.icon || "•")}</span><div class="pt"><span class="tm">${T.esc(p.time)}</span><span class="ti">${T.esc(T.pick(p.title))}</span></div></li>`).join("");
 
     if (W.dressCode) {
       $("dressTitle").textContent = T.pick(W.dressCode.title);
@@ -103,7 +103,12 @@
   function setPlaying(on) {
     mbtn.classList.toggle("playing", on);
     mbtn.setAttribute("aria-label", T.t(on ? "music_off" : "music_on"));
+    $("musicLbl").textContent = T.t(on ? "music_off" : "music_on");
   }
+  setPlaying(false);
+  document.addEventListener("langchange", () => setPlaying(!audio.paused));
+  audio.addEventListener("pause", () => setPlaying(false));
+  audio.addEventListener("play", () => setPlaying(true));
   mbtn.addEventListener("click", () => {
     if (audio.paused) audio.play().then(() => setPlaying(true)).catch(() => {}); else { audio.pause(); setPlaying(false); }
   });
@@ -230,6 +235,41 @@
       <linearGradient id="rg1" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#F7DE9A"/><stop offset=".3" stop-color="#D2A042"/><stop offset=".55" stop-color="#8E621A"/><stop offset=".8" stop-color="#E2B95E"/><stop offset="1" stop-color="#FFF0C2"/></linearGradient>
       <linearGradient id="rg2" x1="1" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#FFF4D2"/><stop offset=".35" stop-color="#E4C47A"/><stop offset=".6" stop-color="#B38A3C"/><stop offset=".85" stop-color="#F2D990"/><stop offset="1" stop-color="#FFF8E4"/></linearGradient>
     </defs></svg>` + ring("rg1", 0, false) + ring("rg2", 0, true);
+  })();
+
+  /* ---------- Künc naxışları (qızılı budaqlar) ---------- */
+  (function garlands() {
+    const leaf = "M0 0 C6 -5 16 -5 22 0 C16 5 6 5 0 0Z";
+    let g = "";
+    for (let i = 0; i < 13; i++) {
+      const t = i / 12, x = 10 + 180 * t, y = 20 + 150 * t * t;           // əyri budaq
+      const ang = Math.atan2(300 * t, 180) * 180 / Math.PI;
+      const side = i % 2 ? 1 : -1, sc = 1.15 - t * .45;
+      g += `<path transform="translate(${x.toFixed(1)} ${y.toFixed(1)}) rotate(${(ang + side * 55).toFixed(1)}) scale(${sc.toFixed(2)})" d="${leaf}"/>`;
+    }
+    const svg = `<svg viewBox="0 0 220 220" fill="currentColor"><path d="M10 20 Q 120 30 190 170" fill="none" stroke="currentColor" stroke-width="1.3"/>${g}</svg>`;
+    document.querySelectorAll(".garland").forEach(el => el.innerHTML = svg);
+  })();
+
+  /* ---------- Foto bölməsində əsl QR ---------- */
+  (function photoQr() {
+    const box = $("qrPhotos"); if (!box || !window.qrcode) return;
+    const q = qrcode(0, "H"); q.addData(T.baseUrl() + "foto.html"); q.make();
+    const n = q.getModuleCount(), c = 10, m = 2, S = (n + m * 2) * c;
+    const finder = (r, k) => (r < 7 && k < 7) || (r < 7 && k >= n - 7) || (r >= n - 7 && k < 7);
+    const mid = n / 2, hole = 2.6;                                          // ortada monoqram üçün yer
+    let dots = "";
+    for (let r = 0; r < n; r++) for (let k = 0; k < n; k++) {
+      if (!q.isDark(r, k) || finder(r, k)) continue;
+      if (Math.abs(r - mid + .5) < hole && Math.abs(k - mid + .5) < hole) continue;
+      dots += `<rect x="${(k + m) * c + .4}" y="${(r + m) * c + .4}" width="${c - .8}" height="${c - .8}" rx="${c * .32}"/>`;
+    }
+    const eye = (r, k) => { const x = (k + m) * c, y = (r + m) * c;
+      return `<rect x="${x + c * .5}" y="${y + c * .5}" width="${c * 6}" height="${c * 6}" rx="${c * 1.6}" fill="none" stroke="currentColor" stroke-width="${c}"/><rect x="${x + c * 2}" y="${y + c * 2}" width="${c * 3}" height="${c * 3}" rx="${c * .9}"/>`; };
+    const cx = S / 2, mono = T.esc(W.monogram || "");
+    box.innerHTML = `<svg viewBox="0 0 ${S} ${S}" fill="currentColor" role="img" aria-label="QR">${dots}${eye(0, 0)}${eye(0, n - 7)}${eye(n - 7, 0)}
+      <circle cx="${cx}" cy="${cx}" r="${c * 2.5}" fill="#fff" stroke="#C9AA74" stroke-width="2"/>
+      <text x="${cx}" y="${cx + c * .7}" text-anchor="middle" font-family="Cormorant Garamond, serif" font-style="italic" font-size="${c * 2.1}" fill="#94702F">${mono}</text></svg>`;
   })();
 
   /* ---------- Qızılı parıltılar ---------- */

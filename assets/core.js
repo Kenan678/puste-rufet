@@ -28,7 +28,7 @@
       upload: "Şəkil yüklə", upload_hint: "Bir neçə şəkli birdən seçə bilərsiniz", your_name: "Adınız (istəyə bağlı)",
       uploading: "{done} / {total} yüklənir…", uploaded: "Hazırdır! {n} şəkil albomda. Təşəkkür edirik!",
       album: "Ortaq albom", album_empty: "Hələ şəkil yoxdur. İlk şəkli siz əlavə edin!", back: "Dəvətnaməyə qayıt",
-      footer: "Sizi səbirsizliklə gözləyirik", music_on: "Musiqini aç", music_off: "Musiqini bağla",
+      footer: "Sizi səbirsizliklə gözləyirik", music_on: "Musiqini başlat", music_off: "Musiqini dayandır", scan_cap: "Şəkil yükləmək üçün skan edin",
       demo: "Nümunə rejimi — Supabase qoşulmayıb, göndərilənlər yadda saxlanmır."
     },
     en: {
@@ -56,7 +56,7 @@
       upload: "Upload photos", upload_hint: "You can pick several photos at once", your_name: "Your name (optional)",
       uploading: "Uploading {done} / {total}…", uploaded: "Done! {n} photos added. Thank you!",
       album: "Shared album", album_empty: "No photos yet. Be the first!", back: "Back to invitation",
-      footer: "We can't wait to celebrate with you", music_on: "Play music", music_off: "Mute music",
+      footer: "We can't wait to celebrate with you", music_on: "Play music", music_off: "Pause music", scan_cap: "Scan to upload photos",
       demo: "Preview mode — Supabase is not connected, nothing is saved."
     },
     ru: {
@@ -84,7 +84,7 @@
       upload: "Загрузить фото", upload_hint: "Можно выбрать сразу несколько фото", your_name: "Ваше имя (необязательно)",
       uploading: "Загрузка {done} / {total}…", uploaded: "Готово! Добавлено фото: {n}. Спасибо!",
       album: "Общий альбом", album_empty: "Пока нет фото. Будьте первым!", back: "К приглашению",
-      footer: "С нетерпением ждём вас", music_on: "Включить музыку", music_off: "Выключить музыку",
+      footer: "С нетерпением ждём вас", music_on: "Включить музыку", music_off: "Выключить музыку", scan_cap: "Сканируйте, чтобы загрузить фото",
       demo: "Демо-режим — Supabase не подключён, данные не сохраняются."
     }
   };
