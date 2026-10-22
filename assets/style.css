@@ -469,3 +469,11 @@ footer .ornament { color: var(--gold-soft); }
   color: #A8854A; -webkit-text-fill-color: #A8854A; text-shadow: 0 1px 0 rgba(255, 255, 255, .6); }
 [data-theme="white-gold"] .names .amp { color: #C9AB76; -webkit-text-fill-color: #C9AB76; }
 [data-theme="white-gold"] .env-card .nm, [data-theme="white-gold"] footer .names { color: #A8854A; -webkit-text-fill-color: #A8854A; }
+
+/* Mobil: səhifə sağa-sola sürüşməsin */
+html, body { max-width: 100%; overflow-x: hidden; }
+@supports (overflow: clip) { html, body { overflow-x: clip; } }
+body { overscroll-behavior-x: none; touch-action: pan-y pinch-zoom; }
+main, header, section, footer, .intro { max-width: 100vw; overflow-x: clip; }
+.garland.left { left: 0; }
+.garland.right { right: 0; }
