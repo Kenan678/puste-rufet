@@ -3,15 +3,15 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>Püstə və Rüfət — Toy şəkilləri</title>
-<meta property="og:title" content="Püstə və Rüfət — Toy şəkilləri">
+<title>Rüfət və Püstə — Toy şəkilləri</title>
+<meta property="og:title" content="Rüfət və Püstə — Toy şəkilləri">
 <meta property="og:description" content="Toyda çəkdiyiniz şəkilləri bizimlə bölüşün">
 <meta property="og:image" content="https://kenan678.github.io/puste-rufet/og-image.jpg">
 <meta name="theme-color" content="#F6EFE3">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;1,500&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="assets/style.css">
+<link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Cormorant+Garamond:ital,wght@0,400;0,500;1,500&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/style.css?v=7">
 <style>
   .photo-hero { padding: 84px 0 28px; text-align: center; }
   .photo-hero .names { font-size: clamp(44px, 13vw, 64px); margin: 14px 0 6px; }
@@ -56,17 +56,17 @@
 
 <div class="lightbox" id="lb"><button class="x" id="lbx" aria-label="Close">×</button><img id="lbimg" alt=""></div>
 
-<script src="config.js"></script>
-<script src="assets/core.js"></script>
+<script src="config.js?v=7"></script>
+<script src="assets/core.js?v=7"></script>
 <script>
 (function () {
   const T = TOY, W = T.W, $ = id => document.getElementById(id);
   let photos = []; // {url, thumb}
 
   function head() {
-    $("names").innerHTML = `${T.esc(W.bride)} <span style="color:var(--gold);font-style:normal">&amp;</span> ${T.esc(W.groom)}`;
+    $("names").innerHTML = `${T.esc(T.first)} <span style="color:var(--gold);font-style:normal">&amp;</span> ${T.esc(T.second)}`;
     $("date").textContent = `${T.longDate(W.date)}`;
-    document.title = `${W.bride} & ${W.groom} — ${T.t("photos")}`;
+    document.title = `${T.first} & ${T.second} — ${T.t("photos")}`;
   }
   const g = (T.params.get("g") || "").trim();
   if (g) $("who").value = g;

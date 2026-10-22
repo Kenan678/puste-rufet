@@ -4,9 +4,9 @@
 
   const I18N = {
     az: {
-      label: "TOY DƏVƏTNAMƏSİ", kicker: "TOY", tagline: "Bu xüsusi günümüzdə sizi yanımızda görmək bizim üçün böyük sevincdir", eb_countdown: "GERİ SAYIM", eb_venue: "MƏKAN", eb_program: "PROQRAM", eb_rsvp: "İŞTİRAK TƏSDİQİ", eb_gb: "TƏBRİKLƏR", eb_photos: "FOTO ALBOM", eb_story: "HEKAYƏ", eb_dress: "GEYİM", eb_seating: "OTURMA PLANI", and: "və", title: "Toy dəvətnaməsi", tap: "Dəvətnaməni açmaq üçün toxunun",
+      label: "TOY DƏVƏTNAMƏSİ", kicker: "TOY", tagline: "Bu xüsusi günümüzdə sizi yanımızda görmək bizim üçün böyük sevincdir!", eb_countdown: "GERİ SAYIM", eb_venue: "MƏKAN", eb_program: "PROQRAM", eb_rsvp: "İŞTİRAK TƏSDİQİ", eb_gb: "TƏBRİKLƏR", eb_photos: "FOTO ALBOM", eb_story: "HEKAYƏ", eb_dress: "GEYİM", eb_seating: "OTURMA PLANI", and: "və", title: "Toy dəvətnaməsi", tap: "Dəvətnaməni açmaq üçün toxunun",
       for_guest: "Hörmətli {name}",
-      invite: "Həyatımızın ən xoşbəxt gününü sizinlə bölüşmək istəyirik. Sizi toy məclisimizdə görməkdən şərəf duyarıq.",
+      invite: "Həyatımızın ən xoşbəxt gününü sizinlə bölüşmək istəyirik. Sizi toy məclisimizdə görməkdən şərəf duyarıq!",
       countdown: "Toya qalan vaxt", d: "gün", h: "saat", m: "dəq.", s: "san.",
       today: "Böyük gün gəldi!", passed: "Bizimlə olduğunuz üçün təşəkkür edirik!",
       story: "Bizim hekayəmiz",
@@ -16,7 +16,7 @@
       seating: "Masanızı tapın", seat_ph: "Ad və soyadınızı yazın", seat_btn: "Axtar",
       seat_found: "{name} — {n} saylı masa", seat_none: "Tapılmadı. Ad və soyadı tam yazın və ya bizə yazın.",
       rsvp: "İştirak edəcəksinizmi?", rsvp_by: "Zəhmət olmasa {date} tarixinədək cavab verin",
-      name: "Ad və soyad", yes: "Gələcəm", no: "Gələ bilməyəcəm", maybe: "Hələ bilmirəm",
+      name: "Ad və soyad", yes: "İştirak edəcəm", no: "İştirak edə bilməyəcəm", maybe: "Hələ bilmirəm",
       count: "Neçə nəfər olacaqsınız?", note: "Arzu və ya qeyd (istəyə bağlı)", send: "Göndər",
       sending: "Göndərilir…", thanks_yes: "Təşəkkür edirik! Sizi səbirsizliklə gözləyirik.",
       thanks_no: "Təşəkkür edirik! Sizi ürəyimizdə yanımızda hiss edəcəyik.",
@@ -28,13 +28,13 @@
       upload: "Şəkil yüklə", upload_hint: "Bir neçə şəkli birdən seçə bilərsiniz", your_name: "Adınız (istəyə bağlı)",
       uploading: "{done} / {total} yüklənir…", uploaded: "Hazırdır! {n} şəkil albomda. Təşəkkür edirik!",
       album: "Ortaq albom", album_empty: "Hələ şəkil yoxdur. İlk şəkli siz əlavə edin!", back: "Dəvətnaməyə qayıt",
-      footer: "Sizi səbirsizliklə gözləyirik", music_on: "Musiqini başlat", music_off: "Musiqini dayandır", scan_cap: "Şəkil yükləmək üçün skan edin",
+      footer: "Sizi səbirsizliklə gözləyirik!", music_on: "Musiqini başlat", music_off: "Musiqini dayandır", scan_cap: "Şəkil yükləmək üçün skan edin",
       demo: "Nümunə rejimi — Supabase qoşulmayıb, göndərilənlər yadda saxlanmır."
     },
     en: {
-      label: "WEDDING INVITATION", kicker: "WEDDING", tagline: "It would mean the world to us to celebrate this special day with you", eb_countdown: "COUNTDOWN", eb_venue: "LOCATION", eb_program: "SCHEDULE", eb_rsvp: "RSVP", eb_gb: "GUESTBOOK", eb_photos: "PHOTO ALBUM", eb_story: "STORY", eb_dress: "STYLE", eb_seating: "SEATING", and: "&", title: "Wedding invitation", tap: "Tap to open your invitation",
+      label: "WEDDING INVITATION", kicker: "WEDDING", tagline: "It would mean the world to us to celebrate this special day with you!", eb_countdown: "COUNTDOWN", eb_venue: "LOCATION", eb_program: "SCHEDULE", eb_rsvp: "RSVP", eb_gb: "GUESTBOOK", eb_photos: "PHOTO ALBUM", eb_story: "STORY", eb_dress: "STYLE", eb_seating: "SEATING", and: "&", title: "Wedding invitation", tap: "Tap to open your invitation",
       for_guest: "Dear {name}",
-      invite: "We would be honoured to have you with us as we celebrate the happiest day of our lives.",
+      invite: "We would be honoured to have you with us as we celebrate the happiest day of our lives!",
       countdown: "Time until the wedding", d: "days", h: "hrs", m: "min", s: "sec",
       today: "The big day is here!", passed: "Thank you for celebrating with us!",
       story: "Our story",
@@ -44,7 +44,7 @@
       seating: "Find your table", seat_ph: "Type your full name", seat_btn: "Search",
       seat_found: "{name} — Table {n}", seat_none: "Not found. Try your full name or message us.",
       rsvp: "Will you join us?", rsvp_by: "Kindly reply by {date}",
-      name: "Full name", yes: "Joyfully accept", no: "Regretfully decline", maybe: "Not sure yet",
+      name: "Full name", yes: "I will attend", no: "I can't attend", maybe: "Not sure yet",
       count: "Number of guests", note: "A wish or note (optional)", send: "Send",
       sending: "Sending…", thanks_yes: "Thank you! We can't wait to see you.",
       thanks_no: "Thank you! You will be with us in our hearts.",
@@ -56,13 +56,13 @@
       upload: "Upload photos", upload_hint: "You can pick several photos at once", your_name: "Your name (optional)",
       uploading: "Uploading {done} / {total}…", uploaded: "Done! {n} photos added. Thank you!",
       album: "Shared album", album_empty: "No photos yet. Be the first!", back: "Back to invitation",
-      footer: "We can't wait to celebrate with you", music_on: "Play music", music_off: "Pause music", scan_cap: "Scan to upload photos",
+      footer: "We can't wait to celebrate with you!", music_on: "Play music", music_off: "Pause music", scan_cap: "Scan to upload photos",
       demo: "Preview mode — Supabase is not connected, nothing is saved."
     },
     ru: {
-      label: "СВАДЕБНОЕ ПРИГЛАШЕНИЕ", kicker: "СВАДЬБА", tagline: "Будем счастливы разделить этот особенный день с вами", eb_countdown: "ОБРАТНЫЙ ОТСЧЁТ", eb_venue: "МЕСТО", eb_program: "ПРОГРАММА", eb_rsvp: "ПОДТВЕРЖДЕНИЕ", eb_gb: "ПОЖЕЛАНИЯ", eb_photos: "ФОТОАЛЬБОМ", eb_story: "ИСТОРИЯ", eb_dress: "СТИЛЬ", eb_seating: "РАССАДКА", and: "и", title: "Свадебное приглашение", tap: "Нажмите, чтобы открыть приглашение",
+      label: "СВАДЕБНОЕ ПРИГЛАШЕНИЕ", kicker: "СВАДЬБА", tagline: "Будем счастливы разделить этот особенный день с вами!", eb_countdown: "ОБРАТНЫЙ ОТСЧЁТ", eb_venue: "МЕСТО", eb_program: "ПРОГРАММА", eb_rsvp: "ПОДТВЕРЖДЕНИЕ", eb_gb: "ПОЖЕЛАНИЯ", eb_photos: "ФОТОАЛЬБОМ", eb_story: "ИСТОРИЯ", eb_dress: "СТИЛЬ", eb_seating: "РАССАДКА", and: "и", title: "Свадебное приглашение", tap: "Нажмите, чтобы открыть приглашение",
       for_guest: "Приглашение для: {name}",
-      invite: "Мы будем счастливы разделить с вами самый радостный день нашей жизни и приглашаем вас на нашу свадьбу.",
+      invite: "Мы будем счастливы разделить с вами самый радостный день нашей жизни и приглашаем вас на нашу свадьбу!",
       countdown: "До свадьбы осталось", d: "дн.", h: "час.", m: "мин.", s: "сек.",
       today: "Этот день настал!", passed: "Спасибо, что были с нами!",
       story: "Наша история",
@@ -72,7 +72,7 @@
       seating: "Найдите свой стол", seat_ph: "Введите имя и фамилию", seat_btn: "Найти",
       seat_found: "{name} — стол № {n}", seat_none: "Не найдено. Введите полное имя или напишите нам.",
       rsvp: "Подтвердите участие", rsvp_by: "Пожалуйста, ответьте до {date}",
-      name: "Имя и фамилия", yes: "Приду", no: "Не смогу", maybe: "Пока не знаю",
+      name: "Имя и фамилия", yes: "Буду присутствовать", no: "Не смогу присутствовать", maybe: "Пока не знаю",
       count: "Сколько вас будет?", note: "Пожелание или комментарий (необязательно)", send: "Отправить",
       sending: "Отправка…", thanks_yes: "Спасибо! Ждём вас с нетерпением.",
       thanks_no: "Спасибо! Вы будете с нами в наших сердцах.",
@@ -84,7 +84,7 @@
       upload: "Загрузить фото", upload_hint: "Можно выбрать сразу несколько фото", your_name: "Ваше имя (необязательно)",
       uploading: "Загрузка {done} / {total}…", uploaded: "Готово! Добавлено фото: {n}. Спасибо!",
       album: "Общий альбом", album_empty: "Пока нет фото. Будьте первым!", back: "К приглашению",
-      footer: "С нетерпением ждём вас", music_on: "Включить музыку", music_off: "Выключить музыку", scan_cap: "Сканируйте, чтобы загрузить фото",
+      footer: "С нетерпением ждём вас!", music_on: "Включить музыку", music_off: "Выключить музыку", scan_cap: "Сканируйте, чтобы загрузить фото",
       demo: "Демо-режим — Supabase не подключён, данные не сохраняются."
     }
   };
@@ -118,6 +118,8 @@
 
   const T = {
     W,
+    first: W.groomFirst ? W.groom : W.bride,
+    second: W.groomFirst ? W.bride : W.groom,
     get lang() { return lang; },
     t(key, vars) {
       let s = (I18N[lang] && I18N[lang][key]) || I18N.az[key] || key;

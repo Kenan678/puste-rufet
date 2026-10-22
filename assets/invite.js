@@ -26,14 +26,14 @@
 
   /* ---------- Render (dilə görə) ---------- */
   function render() {
-    const couple = `${W.bride} ${W.theme === "white-gold" ? T.t("and") : "&"} ${W.groom}`;
+    const couple = `${T.first} ${W.theme === "white-gold" ? T.t("and") : "&"} ${T.second}`;
     document.title = `${couple} — ${T.t("title")}`;
     if ($("envNames")) {   // zərf açıldıqdan sonra DOM-dan silinir
       $("envNames").textContent = couple;
-      $("seal").textContent = W.monogram || (W.bride[0] + "&" + W.groom[0]);
+      $("seal").textContent = W.monogram || (T.first[0] + "&" + T.second[0]);
     }
     const amp = W.theme === "white-gold" ? T.esc(T.t("and")) : "&amp;";
-    $("heroNames").innerHTML = `<span class="nm1">${T.esc(W.bride)}</span><span class="amp">${amp}</span><span class="nm2">${T.esc(W.groom)}</span>`;
+    $("heroNames").innerHTML = `<span class="nm1">${T.esc(T.first)}</span><span class="amp">${amp}</span><span class="nm2">${T.esc(T.second)}</span>`;
     const dp = T.dotDate(W.date).split(" · ");
     $("heroDate").textContent = dp.join(".");
     $("heroDay").textContent = T.weekday(W.date).toLocaleUpperCase(T.lang === "az" ? "az" : T.lang);
@@ -134,8 +134,8 @@
     const f = d => d.toISOString().replace(/[-:]/g, "").replace(/\.\d{3}/, "");
     const v = W.venue || {};
     const ics = ["BEGIN:VCALENDAR", "VERSION:2.0", "PRODID:-//toy//az", "BEGIN:VEVENT",
-      `UID:${f(start)}-${W.bride}-${W.groom}@toy`, `DTSTAMP:${f(new Date())}`, `DTSTART:${f(start)}`, `DTEND:${f(end)}`,
-      `SUMMARY:${W.bride} & ${W.groom}`, `LOCATION:${[v.name, v.address].filter(Boolean).join(", ")}`,
+      `UID:${f(start)}-${T.first}-${T.second}@toy`, `DTSTAMP:${f(new Date())}`, `DTSTART:${f(start)}`, `DTEND:${f(end)}`,
+      `SUMMARY:${T.first} & ${T.second}`, `LOCATION:${[v.name, v.address].filter(Boolean).join(", ")}`,
       `URL:${T.baseUrl()}`, "END:VEVENT", "END:VCALENDAR"].join("\r\n");
     const a = document.createElement("a");
     a.href = URL.createObjectURL(new Blob([ics], { type: "text/calendar" }));

@@ -454,3 +454,12 @@ footer .ornament { color: var(--gold-soft); }
 [data-theme="white-gold"] .map { filter: sepia(.25) saturate(.85); }
 [data-theme="white-gold"] .wish { border-radius: 4px; border-left: 2px solid var(--gold-soft); }
 [data-theme="white-gold"] .invite-text { font-style: italic; font-size: 19px; color: var(--ink-soft); }
+
+/* Adlar — Great Vibes (əl yazısı) */
+:root { --script: "Great Vibes", "Cormorant Garamond", cursive; }
+[data-theme="white-gold"] .names .nm1, [data-theme="white-gold"] .names .nm2 {
+  font-family: var(--script); font-weight: 400; font-style: normal; font-size: 1.12em; line-height: 1.05; color: var(--ink); -webkit-text-fill-color: currentColor; }
+[data-theme="white-gold"] .names .amp { font-family: var(--serif); }
+[data-theme="white-gold"] .env-card .nm, [data-theme="white-gold"] footer .names, .photo-hero .names { font-family: var(--script); font-style: normal; font-weight: 400; }
+[data-theme="white-gold"] footer .names { font-size: 52px; }
+.photo-hero .names { font-size: clamp(48px, 14vw, 68px); }

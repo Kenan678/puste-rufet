@@ -3,9 +3,9 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>Püstə və Rüfət — Toy dəvətnaməsi</title>
+<title>Rüfət və Püstə — Toy dəvətnaməsi</title>
 <meta name="description" content="28 Noyabr 2026, Şənbə · 18:00 · Yeni Arzu, VIP zalı">
-<meta property="og:title" content="Püstə və Rüfət — Toy dəvətnaməsi">
+<meta property="og:title" content="Rüfət və Püstə — Toy dəvətnaməsi">
 <meta property="og:description" content="28 Noyabr 2026, Şənbə · 18:00 · Yeni Arzu, VIP zalı">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://kenan678.github.io/puste-rufet/">
@@ -16,8 +16,8 @@
 <meta name="theme-color" content="#F6EFE3">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500;1,600&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="assets/style.css">
+<link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500;1,600&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/style.css?v=7">
 </head>
 <body class="locked">
 
@@ -75,6 +75,27 @@
     <div class="wrap reveal">
       <div class="sec-head"><p class="eyebrow" data-i18n="eb_countdown"></p><h2 class="sec-title" data-i18n="countdown"></h2><div class="orn"></div></div>
       <div class="countdown" id="cd"></div>
+    </div>
+  </section>
+
+  <section class="block" id="rsvp">
+    <div class="wrap reveal">
+      <div class="sec-head"><p class="eyebrow" data-i18n="eb_rsvp"></p><h2 class="sec-title" data-i18n="rsvp"></h2><div class="orn"></div>
+        <p class="muted" id="rsvpBy"></p></div>
+      <form id="rsvpForm" novalidate>
+        <div class="field"><label for="rName" data-i18n="name"></label><input class="input" id="rName" maxlength="100" autocomplete="name"></div>
+        <div class="field choices three" role="radiogroup">
+          <label class="choice"><input type="radio" name="att" value="yes" checked><span data-i18n="yes"></span></label>
+          <label class="choice"><input type="radio" name="att" value="no"><span data-i18n="no"></span></label>
+          <label class="choice"><input type="radio" name="att" value="maybe"><span data-i18n="maybe"></span></label>
+        </div>
+        <div class="field" id="countField"><span class="lbl" data-i18n="count"></span>
+          <div class="stepper"><button type="button" id="minus" aria-label="-">−</button><output id="cnt">1</output><button type="button" id="plus" aria-label="+">+</button></div>
+        </div>
+        <div class="field"><label for="rNote" data-i18n="note"></label><textarea class="input" id="rNote" maxlength="500"></textarea></div>
+        <button class="btn block" id="rSend" data-i18n="send"></button>
+        <div class="notice" id="rMsg" role="status"></div>
+      </form>
     </div>
   </section>
 
@@ -144,27 +165,6 @@
     </div>
   </section>
 
-  <section class="block" id="rsvp">
-    <div class="wrap reveal">
-      <div class="sec-head"><p class="eyebrow" data-i18n="eb_rsvp"></p><h2 class="sec-title" data-i18n="rsvp"></h2><div class="orn"></div>
-        <p class="muted" id="rsvpBy"></p></div>
-      <form id="rsvpForm" novalidate>
-        <div class="field"><label for="rName" data-i18n="name"></label><input class="input" id="rName" maxlength="100" autocomplete="name"></div>
-        <div class="field choices three" role="radiogroup">
-          <label class="choice"><input type="radio" name="att" value="yes" checked><span data-i18n="yes"></span></label>
-          <label class="choice"><input type="radio" name="att" value="no"><span data-i18n="no"></span></label>
-          <label class="choice"><input type="radio" name="att" value="maybe"><span data-i18n="maybe"></span></label>
-        </div>
-        <div class="field" id="countField"><span class="lbl" data-i18n="count"></span>
-          <div class="stepper"><button type="button" id="minus" aria-label="-">−</button><output id="cnt">1</output><button type="button" id="plus" aria-label="+">+</button></div>
-        </div>
-        <div class="field"><label for="rNote" data-i18n="note"></label><textarea class="input" id="rNote" maxlength="500"></textarea></div>
-        <button class="btn block" id="rSend" data-i18n="send"></button>
-        <div class="notice" id="rMsg" role="status"></div>
-      </form>
-    </div>
-  </section>
-
   <section class="block" id="guestbook">
     <div class="wrap reveal">
       <div class="sec-head"><p class="eyebrow" data-i18n="eb_gb"></p><h2 class="sec-title" data-i18n="gb"></h2><div class="orn"></div></div>
@@ -190,13 +190,13 @@
 
 <audio id="audio" loop preload="none"></audio>
 
-<script src="config.js"></script>
-<script src="assets/core.js"></script>
-<script src="assets/vendor/qrcode.js"></script>
-<script src="assets/invite.js"></script>
+<script src="config.js?v=7"></script>
+<script src="assets/core.js?v=7"></script>
+<script src="assets/vendor/qrcode.js?v=7"></script>
+<script src="assets/invite.js?v=7"></script>
 <script type="importmap">{ "imports": { "three": "./assets/vendor/three.module.min.js" } }</script>
 <script type="module">
-  import { mountRings } from "./assets/rings3d.js";
+  import { mountRings } from "./assets/rings3d.js?v=7";
   const box = document.getElementById("rings");
   try { if (box && mountRings(box)) box.classList.add("webgl"); } catch (e) { console.warn("3D üzüklər alınmadı:", e); }
 </script>

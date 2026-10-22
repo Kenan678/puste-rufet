@@ -8,7 +8,8 @@ window.WEDDING = {
   /* ---- Cütlük ---- */
   bride: "Püstə",
   groom: "Rüfət",
-  monogram: "P&R",                     // möhür üzərindəki hərflər
+  monogram: "R&P",                      // möhür və QR üzərindəki hərflər
+  groomFirst: true,                      // dəvətnamədə əvvəl bəyin adı yazılsın
 
   /* ---- Tarix və vaxt (Bakı vaxtı, +04:00) ---- */
   date: "2026-11-28T18:00:00+04:00",
@@ -28,7 +29,6 @@ window.WEDDING = {
     hall: { az: "VIP zalı", en: "VIP Hall", ru: "VIP-зал" },
     address: "Bakı, Babək prospekti 64/3",
     mapQuery: "Arzu Hall şadlıq sarayı, Babək prospekti 64/3, Bakı",
-    wazeUrl: "https://www.waze.com/az/live-map/directions/arzu-hall-sadliq-sarayi-babek-prospekti-baki?to=place.w.32702868.327225287.10371969",
     lat: 40.392911,   // Waze-dəki Arzu Hall nişanından
     lng: 49.925757
   },
@@ -66,7 +66,7 @@ window.WEDDING = {
   /* ---- Fon musiqisi ----
      MP3 faylını "music" qovluğuna qoyun və adını bura yazın.
      Fayl yoxdursa, musiqi düyməsi avtomatik gizlənir. */
-  music: "music/song.mp3",
+  music: "music/song.mp3?v=7",
 
   /* ---- Oturma planı (istəmirsinizsə: seating: []) ----
      Hər masa üçün qonaq adları. Axtarış hərf böyüklüyünə və ə/e, ı/i fərqinə baxmır. */
