@@ -463,3 +463,9 @@ footer .ornament { color: var(--gold-soft); }
 [data-theme="white-gold"] .env-card .nm, [data-theme="white-gold"] footer .names, .photo-hero .names { font-family: var(--script); font-style: normal; font-weight: 400; }
 [data-theme="white-gold"] footer .names { font-size: 52px; }
 .photo-hero .names { font-size: clamp(48px, 14vw, 68px); }
+
+/* Adlar — daha açıq, yumşaq qızılı */
+[data-theme="white-gold"] .names .nm1, [data-theme="white-gold"] .names .nm2 {
+  color: #A8854A; -webkit-text-fill-color: #A8854A; text-shadow: 0 1px 0 rgba(255, 255, 255, .6); }
+[data-theme="white-gold"] .names .amp { color: #C9AB76; -webkit-text-fill-color: #C9AB76; }
+[data-theme="white-gold"] .env-card .nm, [data-theme="white-gold"] footer .names { color: #A8854A; -webkit-text-fill-color: #A8854A; }
