@@ -14,7 +14,7 @@ window.WEDDING = {
   /* ---- Tarix və vaxt (Bakı vaxtı, +04:00) ---- */
   date: "2026-11-28T18:00:00+04:00",
   durationHours: 5,                        // təqvim üçün təxmini müddət
-  rsvpDeadline: "2026-11-21",              // cavab üçün son tarix (boş qoysanız göstərilmir)
+  rsvpDeadline: "2026-11-25",              // cavab üçün son tarix (boş qoysanız göstərilmir)
 
   /* ---- Dəvət mətni (boş qoysanız standart mətn işlənir) ---- */
   inviteText: {

@@ -15,7 +15,7 @@
       dress: "Geyim tərzi",
       seating: "Masanızı tapın", seat_ph: "Ad və soyadınızı yazın", seat_btn: "Axtar",
       seat_found: "{name} — {n} saylı masa", seat_none: "Tapılmadı. Ad və soyadı tam yazın və ya bizə yazın.",
-      rsvp: "İştirak edəcəksinizmi?", rsvp_by: "Zəhmət olmasa {date} tarixinədək cavab verin",
+      rsvp: "İştirak edəcəksinizmi?", rsvp_by: "Zəhmət olmasa, cavabınızı {date}-cı il tarixinədək təqdim etməyiniz xahiş olunur.",
       name: "Ad və soyad", yes: "İştirak edəcəm", no: "İştirak edə bilməyəcəm", maybe: "Hələ bilmirəm",
       count: "Neçə nəfər olacaqsınız?", note: "Arzu və ya qeyd (istəyə bağlı)", send: "Göndər",
       sending: "Göndərilir…", thanks_yes: "Təşəkkür edirik! Sizi səbirsizliklə gözləyirik.",
