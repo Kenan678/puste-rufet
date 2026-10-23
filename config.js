@@ -66,7 +66,7 @@ window.WEDDING = {
   /* ---- Fon musiqisi ----
      MP3 faylını "music" qovluğuna qoyun və adını bura yazın.
      Fayl yoxdursa, musiqi düyməsi avtomatik gizlənir. */
-  music: "music/song.mp3?v=7",
+  music: "music/song.mp3?v=8",
 
   /* ---- Oturma planı (istəmirsinizsə: seating: []) ----
      Hər masa üçün qonaq adları. Axtarış hərf böyüklüyünə və ə/e, ı/i fərqinə baxmır. */
