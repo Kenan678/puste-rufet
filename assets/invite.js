@@ -108,7 +108,8 @@
   setPlaying(false);
   document.addEventListener("langchange", () => setPlaying(!audio.paused));
   audio.addEventListener("pause", () => setPlaying(false));
-  audio.addEventListener("play", () => setPlaying(true));
+  audio.addEventListener("play", () => { setPlaying(true); clearTimeout(window._mbT); window._mbT = setTimeout(() => mbtn.classList.add("compact"), 4000); });
+  audio.addEventListener("pause", () => { clearTimeout(window._mbT); mbtn.classList.remove("compact"); });
   mbtn.addEventListener("click", () => {
     if (audio.paused) audio.play().then(() => setPlaying(true)).catch(() => {}); else { audio.pause(); setPlaying(false); }
   });
